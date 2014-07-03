@@ -10,8 +10,16 @@ mdim:{[mat]
   (count mat;count flip mat)
  };
 
-/ Diagonal matrix generation (identity by default) 
-diag:{
+/ Retrieves the diagonal of a matrix
+/ @param mat (Matrix|Table|List)
+diag:{[mat]
+  i:count mat[0];
+  x:(til i)+i*til i;
+  (raze mat)[i]
+ };
+
+/ Identity matrix generation
+id:{
   i:til x*x;
   "i" $ (x;x)#raze 0=i mod (x+1)
  };
@@ -39,3 +47,9 @@ bubbleSort:{[list]
 rmse:{
   sqrt sum (x xexp 2) % (count x)
  }; 
+
+/ Exponentially-weighted moving average
+ewma:{
+  {y+x*z-y}[x:2%1+x]\[y]
+ };
+
