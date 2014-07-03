@@ -22,9 +22,9 @@ kmeans:{[data;labels;k];
   finalresult:result;
 
   / dimensions of data
-  sizeX:matrixDim data;
-  n:sizeX[0];
-  m:sizeX[1];
+  size:mdim data;
+  n:size[0];
+  m:size[1];
     
   / allocating variables
   g0:(n,1)#1;
@@ -45,8 +45,8 @@ kmeans:{[data;labels;k];
     iterations:iterations+1];
     
   $[count labels;
-  acc_rate:(count where labels=gIdx[;0])%(count labels);
-  acc_rate:`NA];
+    acc_rate:(count where labels=gIdx[;0])%(count labels);
+    acc_rate:`NA];
     
   finalresult[`accuracyRate]:acc_rate;
   finalresult[`labels]:gIdx[;0];
