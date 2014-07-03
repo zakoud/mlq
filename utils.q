@@ -26,16 +26,16 @@ range:{[vec]
 / @param list (List) list of numbers to sort
 / @example bubbleSort[(2;5;24;17;39;8;47;6;1)]
 bubbleSort:{[list]
-	n:-1+count list;
-	i:0;
-	do[n;j:0;
-		do[n;
-			if[>/[list k:j+0 1]; list[k]:reverse list[k]];
-		j+:1];i+:1];
-	list
+  n:-1+count list;
+  i:0;
+  do[n;j:0;
+    do[n;
+      if[>/[list k:j+0 1]; list[k]:reverse list[k]];
+    j+:1];i+:1];
+  list
  };
  
 / Returns root mean squared error
 rmse:{
-  esqrt sum (x xexp 2) % (count x)
+  sqrt sum (x xexp 2) % (count x)
  }; 
