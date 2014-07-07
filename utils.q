@@ -4,6 +4,8 @@
 // Documentation:
 
 
+pi:acos -1;
+
 / Returns dimensions of a matrix
 / @param mat (Matrix|Table|List) 
 mdim:{[mat] 
@@ -52,4 +54,11 @@ rmse:{
 ewma:{
   {y+x*z-y}[x:2%1+x]\[y]
  };
+
+/ Returns a random normal distribution
+/ @param data (Int) Number of data points to return
+norm:{
+  $[x=2*n:x div 2; raze sqrt[-2*log n?1f]*/:(sin;cos)@\:(2*pi)*n?1f;-1_.z.s 1+x]
+ };
+
 
