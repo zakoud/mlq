@@ -117,7 +117,7 @@ pmax:{
 
 / Kronecker tensor product 
 kron:{
-	x*\:\:y
+	raze(raze'')(flip')x*\:\:y
  };
 
 / Retrieves the diagonal of a matrix
