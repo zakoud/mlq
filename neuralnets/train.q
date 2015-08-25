@@ -6,8 +6,11 @@
 \l ../utils.q
 \l nn.q
 
+// change to your datasets' path
+datasets:`../data;
+
 loadData:{[data]
-	data:("FFFF*";",") 0: `$raze string `:,data;
+	data:("FFFF*";",") 0: ` sv `:,datasets,data;
 	dataSet:()!();
 	outputs:{"F"$enlist each x} each last data;
 	dataSet[`bias]:(count flip data)#1f;
