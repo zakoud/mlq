@@ -7,7 +7,7 @@
 \l nn.q
 
 // change to your datasets' path
-datasets:`../data;
+datasets:`$"../data";
 
 loadData:{[data]
 	data:("FFFF*";",") 0: ` sv `:,datasets,data;
