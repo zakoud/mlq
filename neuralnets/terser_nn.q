@@ -1,4 +1,5 @@
-nonlin:{ $[y;x*1-x;1%1 + exp neg x] };
+\l ../utils.q
+nonlin:{ $[y;x*1-x; sigmoid x] };
 x:"f"$(0 0 1;0 1 1;1 0 1;1 1 1);
 y:0 0 1 1f;
 syn0:-.5+3?1.0;
@@ -9,4 +10,3 @@ step:{
   syn0+:(flip x) mmu l1_delta;
   l1 }
 do[10000;l1:step[x;y]];
-show l1
